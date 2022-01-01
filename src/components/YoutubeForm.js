@@ -8,25 +8,47 @@ function YoutubeForm() {
             name:'',
             email:'',
             channel:'',
+        },
+
+        onSubmit : values => {
+            console.log('Form data', values)
         }
     })
 
-    console.log ('Form values', formik.values)
+    //console.log ('Form values', formik.values)
 
     return (
         <div>
-            <form>
+            <form onSubmit={formik.handleSubmit}>
 
-                <lable htmlFor='name'> Name  </lable>
-                <input type='text' id='name' name='name' onChange={formik.handleChange} value={formik.values.name}/>
+                <label htmlFor='name'> Name  </label>
+                <input 
+                    type='text' 
+                    id='name' 
+                    name='name' 
+                    onChange={formik.handleChange} 
+                    value={formik.values.name}
+                />
 
-                <lable htmlFor='email'> E-mail </lable>
-                <input type='email' id='email' name='email'onChange={formik.handleChange} value={formik.values.email}/>
+                <label htmlFor='email'> E-mail </label>
+                <input 
+                    type='email'                                    
+                    id='email' 
+                    name='email'
+                    onChange={formik.handleChange} 
+                    value={formik.values.email}
+                />
 
-                <lable htmlFor='channel'> Channel </lable>
-                <input type='text' id='channel' name='channel' onChange={formik.handleChange} value={formik.values.channel}/>
+                <label htmlFor='channel'> Channel </label>
+                <input 
+                    type='text' 
+                    id='channel'
+                    name='channel' 
+                    onChange={formik.handleChange} 
+                    value={formik.values.channel}
+                />
 
-                <button>Submit</button>
+                <button type='submit'>Submit</button>
             </form>
             
         </div>
